@@ -1,0 +1,513 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #e6e6e6;
+    color: #333;
+}
+
+/* Container for centering content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header styling */
+header {
+    background-color: #fff; /* Beyaz arka plan */
+    color: #333;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo-container {
+    flex: 1; /* Logo konteynerine daha fazla yer ver */
+}
+
+header .logo {
+    height: 70px; /* Logoyu büyüttük */
+}
+
+header nav {
+    flex: 2; /* Menüye daha fazla yer ver */
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Menü öğelerini sağa hizalayın */
+}
+
+header nav ul li {
+    margin-left: 2rem;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero section */
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 1s ease-in-out; /* Geçiş efekti */
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Metin kutusu */
+.hero-content {
+    position: relative;
+    z-index: 1; /* Metin kutusunu arka planın üzerine getir */
+    padding: 20px; /* Metin kutusu iç boşluğu */
+    background: rgba(0, 0, 0, 0.5); /* Arka planın karanlık görünmesi için */
+    color: #fff;
+}
+
+/* Metinler */
+.hero-title,
+.hero-text {
+    margin: 0; /* Varsayılan kenar boşluğunu kaldır */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Metinlere hafif bir gölge */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #42908d;
+    color: #fff;
+    border: none;
+    border-radius: 25px; /* Kenarları yuvarlat */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Renk ve dönüşüm geçişleri */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.hero .btn:hover {
+    background-color: #367f7a;
+    transform: translateY(-5px); /* Hover efekti */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Hover gölgesi */
+}
+
+.hero .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 144, 141, 0.5); /* Fokus efekti */
+}
+
+.hero .btn:active {
+    transform: translateY(-1px); /* Aktif durum efekti */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Aktif durum gölgesi */
+}
+
+@keyframes button-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.hero .btn.animated {
+    animation: button-bounce 0.5s ease;
+}
+
+.hero .btn:hover {
+    background-color: #e65c00;
+}
+
+/* Services section */
+.services {
+    background-color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.service-item {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Service item visible class for animation */
+.service-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* About section */
+.about {
+    background-color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+.about-content p:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.about-content p:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Contact section */
+.contact {
+    background-color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #e65c00;
+}
+
+/* Language select box styling */
+#language-select {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    margin-left: 1rem;
+    position: relative;
+    cursor: pointer;
+    appearance: none; /* Remove default arrow */
+}
+
+#language-select::after {
+    position: absolute;
+    right: 10px; /* Sağa kaydırıldı */
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#language-select:focus {
+    border-color: #333;
+    outline: none;
+}
+
+#language-select option {
+    padding: 10px;
+}
+
+.language-container {
+    position: relative;
+}
+
+.language-icon {
+    cursor: pointer;
+    margin-left: 3rem;
+    margin-right: -0.5rem; /* İkon ile dil seçme kutusu arasındaki boşluğu ayarla */
+}
+
+/* Projeler sayfası için ek stiller */
+.projects {
+    padding: 4rem 0;
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.categories {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.categories button {
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    border: none;
+    background-color: #42908d;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px; /* Kenarları yuvarlat */
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Renk ve dönüşüm geçişleri */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.categories button:hover {
+    background-color: #367f7a;
+    transform: translateY(-5px); /* Hover efekti */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Hover gölgesi */
+}
+
+.categories button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 144, 141, 0.5); /* Fokus efekti */
+}
+
+.categories button:active {
+    transform: translateY(-1px); /* Aktif durum efekti */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Aktif durum gölgesi */
+}
+
+@keyframes button-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-15px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.categories button.animated {
+    animation: button-bounce 0.5s ease;
+}
+
+.projects-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-group {
+    margin-bottom: 3rem;
+}
+
+.project-group h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.project-item {
+    position: relative;
+    width: 30%;
+    margin: 1rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-item img {
+    width: 100%;
+    display: block;
+}
+
+.project-item p {
+    display: none; /* İsimleri gizle */
+    padding: 1rem;
+    text-align: center;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Modal yapısı */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}

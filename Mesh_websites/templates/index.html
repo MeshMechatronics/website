@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesh Mekatronik</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Mesh Mechatronics Logo" class="logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" data-translate="home">Anasayfa</a></li>
+                    <li><a href="{{ url_for('about') }}" data-translate="about">Hakkımızda</a></li>
+                    <li><a href="{{ url_for('services') }}" data-translate="services">Hizmetler</a></li>
+                    <li><a href="{{ url_for('projects') }}" data-translate="projects">Projeler</a></li>
+                    <li><a href="{{ url_for('contact') }}" data-translate="contact">İletişim</a></li>
+                </ul>
+            </nav>
+            <span class="language-icon" onclick="toggleLanguageSelect()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" />
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/>
+                </svg>
+            </span>
+            <select id="language-select" onchange="changeLanguage()">
+                <option value="tr">TR</option>
+                <option value="en">EN</option>
+                <option value="de">DE</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="container">
+                    <h1 data-translate="hero-title">Endüstriyel Mekanik Çözümler Uzmanı</h1>
+                    <p data-translate="hero-text">Mesh Mekatronik - Endüstriyel İnovasyonunuzun Ortağı</p>
+                    <a href="services" class="btn" data-translate="hero-btn">Daha Fazla Bilgi</a>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <div class="container">
+                <h2 data-translate="services-title">Hizmetlerimiz</h2>
+                <div class="service-item">
+                    <h3 data-translate="service1-title">Mekanik Tasarım ve Prototip Üretimi</h3>
+                    <p data-translate="service1-text">Tüm ihtiyaçlarınız için yüksek kaliteli tasarım ve prototip üretimi hizmetleri.</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-translate="service2-title">Otomasyon Çözümleri</h3>
+                    <p data-translate="service2-text">İşlemlerinizi optimize etmek için uzman otomasyon çözümleri.</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-translate="service3-title">Bakım ve Destek</h3>
+                    <p data-translate="service3-text">Sistemlerinizin sorunsuz çalışmasını sağlamak için güvenilir bakım ve destek hizmetleri.</p>
+                </div>
+                <div class="service-item">
+                    <h3 data-translate="service4-title">Danışmanlık ve Eğitim</h3>
+                    <p data-translate="service4-text">Takımınızı güçlendirmek için profesyonel danışmanlık ve eğitim hizmetleri.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p data-translate="footer-text">&copy; 2024 Mesh Mekatronik. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+</body>
+</html>

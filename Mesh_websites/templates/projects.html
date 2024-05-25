@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeler - Mesh Mekatronik</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/projects.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <a href="/">
+                    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Mesh Mechatronics Logo" class="logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}" data-translate="home">Anasayfa</a></li>
+                    <li><a href="{{ url_for('about') }}" data-translate="about">Hakkımızda</a></li>
+                    <li><a href="{{ url_for('services') }}" data-translate="services">Hizmetler</a></li>
+                    <li><a href="{{ url_for('projects') }}" data-translate="projects">Projeler</a></li>
+                    <li><a href="{{ url_for('contact') }}" data-translate="contact">İletişim</a></li>
+                </ul>
+            </nav>
+            <select id="language-select" onchange="changeLanguage()">
+                <option value="tr">TR</option>
+                <option value="en">EN</option>
+                <option value="de">DE</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section class="projects">
+            <div class="container">
+                <h2 data-translate="projects-title">Projelerimiz</h2>
+                <div class="categories">
+                    <button data-category="all" data-translate="all">Tümü</button>
+                    <button data-category="concept-designs" data-translate="concept-designs">Konsept Tasarımlar</button>
+                    <button data-category="fixtures" data-translate="fixtures">Fikstürler</button>
+                    <button data-category="special-machines" data-translate="special-machines">Özel Makineler</button>
+                </div>
+                <div class="projects-gallery">
+                    <div class="project-group" data-category="concept-designs">
+                        <h3>Proje 1: Konsept Tasarımlar</h3>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/concept1.jpg') }}" alt="Concept Design 1">
+                            <p data-translate="concept-design-1">Konsept Tasarım 1</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/concept2.jpg') }}" alt="Concept Design 2">
+                            <p data-translate="concept-design-2">Konsept Tasarım 2</p>
+                        </div>
+                    </div>
+                    <div class="project-group" data-category="fixtures">
+                        <h3>Proje 2: Fikstürler</h3>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/fixture1.jpg') }}" alt="Fixture 1">
+                            <p data-translate="fixture-1">Fikstür 1</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/fixture2.jpg') }}" alt="Fixture 2">
+                            <p data-translate="fixture-2">Fikstür 2</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/fixture3.jpg') }}" alt="Fixture 3">
+                            <p data-translate="fixture-3">Fikstür 3</p>
+                        </div>
+                    </div>
+                    <div class="project-group" data-category="special-machines">
+                        <h3>Ford Gölcük J74</h3>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/special1.jpg') }}" alt="Special Machine 1">
+                            <p data-translate="special-machine-1">Özel Makine 1</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/special2.jpg') }}" alt="Special Machine 2">
+                            <p data-translate="special-machine-2">Özel Makine 2</p>
+                        </div>
+                        <h3>Ford İnönü H625</h3>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/special1.jpg') }}" alt="Special Machine 1">
+                            <p data-translate="special-machine-1">Özel Makine 1</p>
+                        </div>
+                        <div class="project-item">
+                            <img src="{{ url_for('static', filename='images/projects/special2.jpg') }}" alt="Special Machine 2">
+                            <p data-translate="special-machine-2">Özel Makine 2</p>
+                        </div>
+                    </div>
+                    <!-- Daha fazla proje grubu eklenebilir -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p data-translate="footer-text">&copy; 2024 Mesh Mekatronik. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Modal yapısı -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+    </div>
+</body>
+</html>
