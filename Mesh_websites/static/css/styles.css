@@ -309,6 +309,58 @@ footer {
     background-color: #e65c00;
 }
 
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.contact-container > div {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+}
+
+.map-container {
+    flex: 2;
+    height: 450px;
+}
+
+.info-container {
+    flex: 1;
+}
+
+.info-container p, .info-container form {
+    margin: 10px 0;
+}
+
+.info-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container form label {
+    margin-top: 10px;
+}
+
+.info-container form input, .info-container form textarea {
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info-container form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 /* Language select box styling */
 #language-select {
     background: white;
@@ -518,4 +570,84 @@ footer {
     color: #ccc;
     padding: 10px 0;
     height: 150px;
+}
+
+/* Contact section enhancements */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.contact-container > div {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+}
+
+.map-container {
+    flex: 2;
+    height: 450px;
+}
+
+.info-container {
+    flex: 1;
+}
+
+.info-container p, .info-container form {
+    margin: 10px 0;
+}
+
+.info-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container form label {
+    margin-top: 10px;
+}
+
+.info-container form input, .info-container form textarea {
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info-container form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #42908d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.info-container form button:hover {
+    background-color: #367f7a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    header nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+    .contact-container {
+        flex-direction: column;
+    }
+    .map-container {
+        height: 300px;
+    }
 }
